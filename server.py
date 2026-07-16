@@ -5,6 +5,7 @@ import sys
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from urllib.parse import urlparse
 import requests as req_lib
+import requests 
 
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
