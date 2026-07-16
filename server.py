@@ -125,8 +125,8 @@ class APIProxyHandler(SimpleHTTPRequestHandler):
 
 
 def main():
-    port = int(sys.argv[1]) if len(sys.argv) > 1 else 3000
-    server = HTTPServer(("127.0.0.1", port), APIProxyHandler)
+    port = int(os.environ.get("PORT", 3000))
+    server = HTTPServer(("0.0.0.0", port), APIProxyHandler)
     print(f"\n  API Tester running at http://localhost:{port}\n")
     print(f"  Press Ctrl+C to stop\n")
     try:
